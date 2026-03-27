@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 const connectDB = async () => {
-    const mongoUri = "mongodb://tt4user:tt4pass2026@ac-ugij3ml-shard-00-00.hee5opz.mongodb.net:27017,ac-ugij3ml-shard-00-01.hee5opz.mongodb.net:27017,ac-ugij3ml-shard-00-02.hee5opz.mongodb.net:27017/tt4_lab2?ssl=true&replicaSet=atlas-66n52a-shard-0&authSource=admin&appName=tt4"
-
-    await mongoose.connect(mongoUri);
+    await mongoose.connect(process.env.MONGO_URI);
     console.log("MongoDB connected successfully!");
 }
 
